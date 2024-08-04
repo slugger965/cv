@@ -1,0 +1,19 @@
+import cv2
+import matplotlib.pyplot as plt
+image_path = 'C:/Users/Ashish/Desktop/mv_agusta.jpg'  
+image = cv2.imread(image_path)
+ksize = (75, 75
+sigmaX = 0  
+blurred_image = cv2.GaussianBlur(image, ksize, sigmaX)
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
+plt.title('Original Image')
+plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+plt.axis('off')
+plt.subplot(1, 2, 2)
+plt.title('Blurred Image')
+plt.imshow(cv2.cvtColor(blurred_image, cv2.COLOR_BGR2RGB))
+plt.axis('off')
+plt.show()
+blurred_image_path = 'C:/Users/Ashish/Desktop/blurred_image.jpg'  
+cv2.imwrite(blurred_image_path, blurred_image)
